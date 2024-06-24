@@ -1,0 +1,25 @@
+name: asid
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - pytorch=1.13
+  - python=3.9
+  - pip
+  - pip:
+    - stable-baselines3[extra]
+    - dm-robotics-moma
+    - gym==0.22.0
+    - mujoco==3.0.0
+    - mujoco-python-viewer
+    - hydra-core==1.3.2
+    - scipy
+    - wandb
+    - tqdm
+    - shimmy>=0.2.1
+    - moviepy
+    - imageio
+    - joblib
+    - mkl==2024.0

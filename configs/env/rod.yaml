@@ -1,0 +1,14 @@
+obj_id: "rod"
+
+# min and max for randomizing x,y position and orientation of the rod
+obj_pose_noise_dict:
+  {
+    "x": { "min": 0.0, "max": 0.1 },
+    "y": { "min": -0.1, "max": 0.1 },
+    "yaw": { "min": -0.785, "max": 0.785 },
+  }
+obs_keys: ["lowdim_ee", "lowdim_qpos", "obj_pose"]
+flatten: true
+
+# safety penalty for pushingthe rod off the table
+safety_penalty: 0.

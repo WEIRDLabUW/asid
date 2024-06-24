@@ -1,0 +1,12 @@
+# defines the parameter range to randomize over during training and evaluation
+parameter_dict: {"friction": {"type": "uniform", "min": 1.0, "max": 3.0, "value": null}}
+
+# whether to compute ASID reward
+reward: true
+# delta to compute gradient via finite differences
+delta: 0.5
+# normalization factor for ASID reward
+normalization: 0.001
+
+# observation noise std
+obs_noise: 0.01

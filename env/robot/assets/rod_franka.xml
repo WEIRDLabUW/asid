@@ -1,0 +1,55 @@
+<mujoco model="rod_franka">
+
+    <option>
+        <flag multiccd="enable" />
+    </option>
+    <size njmax='1000' nconmax='1000' />
+
+    <include file="basic_scene.xml" />
+    <include file="franka_assets/franka_assets.xml" />
+
+    <visual>
+        <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+        <rgba haze="0.15 0.25 0.35 1"/>
+        <global azimuth="120" elevation="-20"/>
+        <quality shadowsize="0" offsamples="8" />
+    </visual>
+
+    <compiler inertiafromgeom='auto' inertiagrouprange='0 5' angle="radian" texturedir="texture"
+        meshdir="franka_assets/meshes" />
+    <worldbody>
+
+        <!-- Camera -->
+        <camera name="front" pos="1.521 0.006 0.528" xyaxes="0.016 1.000 0.000 -0.177 0.003 0.984"/>
+
+        <!-- <camera name="front" fovy="65"
+            pos="1.3420383158842424 -0.037408864541261 0.5281817817238226"
+            quat="0.60670078 0.37513562 0.37637644 0.5912091" /> -->
+        
+        <!-- Robot -->
+        <body pos='0. 0. 0.' euler='0 0 0'>
+            <include file="franka_assets/chain.xml" />
+        </body>
+
+        <!-- Rod -->
+        <!-- modeled a cuboid (rod_body) with a cube (rod_com) that can be moved to shift center of mass -->
+        <body name="rod_body" pos="0.4 0.3 0.02" euler="0 0 0.1">
+            <freejoint name="rod_freejoint" />
+            <inertial pos="0 0 0" mass="0.01" diaginertia="0.0002 0.0002 0.0002" />
+            
+            <!-- moveable weight inside the rod -->
+            <body name="rod_com" pos="0. 0. 0." quat="1 0 0 0">
+                <inertial pos="0 0 0" mass="0.015" diaginertia="0.0002 0.0002 0.0002" />
+                <geom name="rod_geom_com" conaffinity="0" contype="0" condim="3"
+                    pos="0. 0 0" type="box" size="0.02 0.03 0.02" rgba="0.59 0.17 0.17 1" />
+                    <geom name="rod_visual_com" conaffinity="0" contype="0" condim="1"
+                    pos="0. 0 0.02" type="sphere" size="0.015" rgba="0 0 1 1" />
+            </body>
+                <geom name="rod_geom_0" friction="1. 0.005 0.0001" mass="0." conaffinity="1" contype="1" condim="3" pos="0. 0. 0.0" type="box" size="0.02 0.15 0.02" rgba="0.59 0.17 0.17 1"/>
+        </body>
+
+    </worldbody>
+
+    <include file="franka_assets/actuator_position.xml" />
+    
+</mujoco>

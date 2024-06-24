@@ -1,0 +1,12 @@
+# defines the parameter range to randomize over during training and evaluation
+parameter_dict: {"inertia": {"type": "uniform", "min": -0.1, "max": 0.1, "value": null}}
+
+# whether to compute ASID reward
+reward: true
+# delta to compute gradient via finite differences
+delta: 0.01
+# normalization factor for ASID reward
+normalization: 0.02
+
+# observation noise std
+obs_noise: 0.01

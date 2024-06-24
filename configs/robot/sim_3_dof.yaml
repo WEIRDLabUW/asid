@@ -1,0 +1,15 @@
+control_hz: 10
+DoF: 3
+gripper: false
+
+# observation space configuration
+qpos: true
+ee_pos: true
+imgs: false
+
+# specify path length if resetting after a fixed length
+max_path_length: 20
+
+# Mujoco: model name
+model_name: "rod_franka"
+on_screen_rendering: false

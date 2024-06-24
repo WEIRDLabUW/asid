@@ -1,0 +1,17 @@
+hydra:
+  job:
+    chdir: false
+  
+defaults:
+  - asid: inertia
+  - env: rod
+  - robot: sim_2_dof
+  - train: explore
+  - log: tensorboard
+
+exp_id: "asid_rod"
+
+seed: 0
+gpu_id: 0
+num_workers: 32
+num_workers_eval: 4

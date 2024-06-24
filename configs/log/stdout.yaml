@@ -1,0 +1,5 @@
+log_interval: 10
+eval_interval: 100
+save_interval: 1000
+dir: logdir
+format_strings: [stdout]

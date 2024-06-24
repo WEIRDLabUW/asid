@@ -1,0 +1,44 @@
+<mujocoinclude>
+  
+    <actuator>
+      <!-- KITCHEN FRANKA CONFIG -->
+      <!-- <general class="panda" name="panda_actuator1" joint="panda_joint1" gainprm="4500"
+      biasprm="0 -4500 -450"/>
+      <general class="panda" name="panda_actuator2" joint="panda_joint2" gainprm="4500" biasprm="0 -4500
+      -450"
+          ctrlrange="-1.7628 1.7628"/>
+      <general class="panda" name="panda_actuator3" joint="panda_joint3" gainprm="3500" biasprm="0 -3500
+      -350"/>
+      <general class="panda" name="panda_actuator4" joint="panda_joint4" gainprm="3500" biasprm="0 -3500
+      -350"
+          ctrlrange="-3.0718 -0.0698"/>
+      <general class="panda" name="panda_actuator5" joint="panda_joint5" gainprm="2000" biasprm="0 -2000
+      -200"
+          forcerange="-12 12"/>
+      <general class="panda" name="panda_actuator6" joint="panda_joint6" gainprm="2000" biasprm="0 -2000
+      -200"
+          forcerange="-12 12" ctrlrange="-0.0175 3.7525"/>
+      <general class="panda" name="panda_actuator7" joint="panda_joint7" gainprm="2000" biasprm="0 -2000
+      -200"
+          forcerange="-12 12"/>
+      <general class="panda" name="panda_actuator8" tendon="split" forcerange="-100 100" ctrlrange="0
+      255"
+          gainprm="0.01568627451 0 0" biasprm="0 -100 -10"/> -->
+      
+      <!-- POLYMETIS CONFIG -->
+      <!-- position control with feedback (PD) gain kp and damping kv-->
+      <!-- <general dyntype="none" dynprm="1 0 0" gaintype="fixed" gainprm="kp 0 0" biastype="affine" biasprm="0 -kp -kv"/> -->
+      <!-- equivalent to the following in mujoco>=3.1.0 -->
+      <!-- <position kp=kp kv=kv />-->
+      <!-- https://mujoco.readthedocs.io/en/3.1.0/XMLreference.html#actuator-position -->
+      <!-- scale kp and kv by 100 if values come from polymetis configs (Kq, Kqd) -->
+      <general class="panda" name="panda_actuator1" joint="panda_joint1" dyntype="none" dynprm="1 0 0" gaintype="fixed" gainprm="4000 0 0" biastype="affine" biasprm="0 -4000 -400" />
+      <general class="panda" name="panda_actuator2" joint="panda_joint2" dyntype="none" dynprm="1 0 0" gaintype="fixed" gainprm="3000 0 0" biastype="affine" biasprm="0 -3000 -600" />
+      <general class="panda" name="panda_actuator3" joint="panda_joint3" dyntype="none" dynprm="1 0 0" gaintype="fixed" gainprm="5000 0 0" biastype="affine" biasprm="0 -5000 -500" />
+      <general class="panda" name="panda_actuator4" joint="panda_joint4" dyntype="none" dynprm="1 0 0" gaintype="fixed" gainprm="2500 0 0" biastype="affine" biasprm="0 -2500 -500" />
+      <general class="panda" name="panda_actuator5" joint="panda_joint5" dyntype="none" dynprm="1 0 0" gaintype="fixed" gainprm="3500 0 0" biastype="affine" biasprm="0 -3500 -300" />
+      <general class="panda" name="panda_actuator6" joint="panda_joint6" dyntype="none" dynprm="1 0 0" gaintype="fixed" gainprm="2500 0 0" biastype="affine" biasprm="0 -2500 -200" />
+      <general class="panda" name="panda_actuator7" joint="panda_joint7" dyntype="none" dynprm="1 0 0" gaintype="fixed" gainprm="1000 0 0" biastype="affine" biasprm="0 -1000 -100" />
+  
+    </actuator>
+  </mujocoinclude>

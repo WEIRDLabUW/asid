@@ -1,0 +1,13 @@
+load_policy: false
+
+total_timesteps: 250_000 # 1_000_000
+
+algorithm:
+
+  buffer_size: 1_000_000
+
+  learning_starts: 500
+  train_freq: 32
+  gradient_steps: 1
+
+  ent_coef: 0.0001

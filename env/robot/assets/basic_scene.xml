@@ -1,0 +1,29 @@
+<mujocoinclude>
+    <asset>
+        <texture name="texplane_black" type="2d" height="1" width="1" file="matte_black1.png" />
+        <material name='MatPlaneBlack' texture="texplane_black" texrepeat="1 1"
+            texuniform="true" />
+        <texture name="texplane_gray" type="2d" height="1" width="1" file="gray-plaster.png" />
+        <material name='MatPlaneGray' texture="texplane_gray" texrepeat="1 1"
+                texuniform="true" />
+            
+        </asset>
+
+    <worldbody>
+        <light name="headlight" pos="0 0 2" dir="0 0 -1" diffuse="1 1 1" specular="0.1 0.1 0.1" ambient="0.1 0.1 0.1" />
+        
+        <geom name='floor' friction='0.2 0.001 0.00001' pos='0.3 0. -0.6' size='1. 2. 1'
+            conaffinity='1' contype='1' type='plane' rgba="0.2 0.2 0.2 1." condim='3' />
+
+        <geom name='wall_back' friction='0.2 0.001 0.00001' pos='-0.6 0. 0.4' euler="0. 1.57 0." size='1. 2. 0.01'
+            conaffinity='1' contype='1' type='box' rgba="0.2 0.2 0.2 1." condim='3' />
+        
+        <geom name='vention_table' friction='0.2 0.001 0.00001' pos='0.23 0. -0.075' euler="0 0 0" size='0.405 0.675 0.075'
+            conaffinity='1' contype='1' type='box' rgba="0.1 0.1 0.1 1" condim='3' />
+
+        <site name='xaxis' pos='.5 0 0' size='.005 .5' type='capsule' rgba='1 0 0 .25'
+            euler='0 1.57 0' group='3' />
+        <site name='yaxis' pos='0 .5 0' size='.005 .5' type='capsule' rgba='0 1 0 .25'
+            euler='1.57 0 0' group='3' />
+    </worldbody>
+</mujocoinclude>
